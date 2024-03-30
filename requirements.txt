@@ -1,0 +1,11 @@
+tensorboard==1.15.0    
+tensorflow==1.15.0    
+tensorflow-estimator==1.15.1    
+tensorflow-probability==0.8.0  
+pandas
+numpy
+scipy
+astropy
+pydl
+absl-py
+protobuf<3.20

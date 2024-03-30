@@ -68,11 +68,15 @@ py_test(
 proto_library(
     name = "light_curve_pb2",
     srcs = ["light_curve.proto"],
-    cc_api_version = 2,
+    # cc_api_version = 2,
 )
 
+load("@com_google_protobuf//:protobuf.bzl", "py_proto_library")
 py_proto_library(
-    name = "light_curve_py_pb2",
-    api_version = 2,
-    deps = [":light_curve_pb2"],
+name = "light_curve_py_pb2",
+srcs_version = "PY2AND3",
+srcs = glob(["proto/*.proto"]),
+deps = [
+"@com_google_protobuf//:protobuf_python",
+],
 )
